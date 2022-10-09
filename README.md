@@ -1,6 +1,6 @@
 # What is it?
 
-The Wemos LOLIN32 with OLED is a ESP32 microcontroller with an integrated 128x64 OLED display driven by an SSD1306. All of this is well supported by MicroPython. The code in this repository is specifically written to take advantage of the LOLIN32 with OLED and clone boards.
+The Wemos LOLIN32 with OLED is a ESP32 microcontroller with an integrated 128x64 OLED display driven by an SSD1306. All of this is well supported by MicroPython and boards are generally in the $15(US) price range maing them attractive for hobby and STEM labs. The code in this repository is specifically written to take advantage of the LOLIN32 with OLED and clone boards.
 
 boot.py -- start wifi networking and display status on the OLED
 
@@ -26,3 +26,4 @@ boot.py was created with the idea of having only one program to load on multiple
 
 The wifi connection process is a little more robust than typical examples and features a connection timeout with status shown on the OLED.
 
+Screen saver and screen wake-up functionality can serve as an example of GPIO and timer-based interrupt handling.
