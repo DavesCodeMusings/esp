@@ -27,3 +27,15 @@ boot.py was created with the idea of having only one program to load on multiple
 The wifi connection process is a little more robust than typical examples and features a connection timeout with status shown on the OLED.
 
 Screen saver and screen wake-up functionality can serve as an example of GPIO and timer-based interrupt handling.
+
+# How to use it?
+
+* Visit https://micropython.org/download/esp32/ to get the latest firmware for the ESP32.
+* Visit https://thonny.org/ to download the Thonny integrated development environment (IDE).
+* Use Thonny to flash MicroPython firmware onto the ESP32.
+* Copy boot.py and config.py to the freshly flashed microcontroller.
+* Edit config.py as needed.
+* Reboot and start developing with MicroPython.
+
+You can put your code in main.py to have it run automatically each time the microcontroller starts or you can use a different file name to run adhoc from the Thonny IDE.
+
