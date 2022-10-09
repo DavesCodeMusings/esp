@@ -22,4 +22,7 @@ IS_ACCESS_POINT is a True/False boolean. Timeouts are expressed in units of seco
 
 # Why?
 
-boot.py was created with the idea of having one program to load on multiple ESP32 devices that could then be configured as one access point and several clients. The only requirement is to set the config.py parameter `IS_ACCESS_POINT = True` on the one device serving as the AP.
+boot.py was created with the idea of having only one program to load on multiple ESP32 devices that could then be configured as one access point and several clients. The only requirement is to set the config.py parameter `IS_ACCESS_POINT = True` on the one device serving as the AP.
+
+The wifi connection process is a little more robust than typical examples and features a connection timeout with status shown on the OLED.
+
