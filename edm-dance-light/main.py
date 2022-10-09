@@ -17,7 +17,7 @@ print("\n\n{:3d} BPM".format(bpm))
 t = 0
 while (1):
     start_time = ticks_us()
-    a = cos(t) * 511 + 512  # Sine ranges from -1 to 1. PWM amplitude requires 0 to 1023.
+    a = cos(t) * 511 + 512  # Cosine ranges from -1 to 1. PWM amplitude requires 0 to 1023.
     led.duty(int(a))  # LED brightness is controlled by duty cycle.
     t += pi / period  # Incrementing time by the beat period syncs the LED to every two beats.
     if (t > 2 * pi):  # 2pi radians is one full cycle of the sine wave.
