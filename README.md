@@ -1,2 +1,1 @@
-# lolin32oled
-Code for use with Wemos LOLIN32 with built-in OLED
+The Wemos LOLIN32 with OLED is a ESP32 with an integrated 128x64 OLED display driven by an SSD1306. All of this is well supported by MicroPython. The code in this repository is specifically targeted at the LOLIN32 with OLED and clone boards.
