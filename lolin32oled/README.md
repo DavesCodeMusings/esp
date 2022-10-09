@@ -32,7 +32,7 @@ Screen saver and screen wake-up functionality can serve as an example of GPIO an
 
 * Visit https://micropython.org/download/esp32/ to get the latest firmware for the ESP32.
 * Visit https://thonny.org/ to download the Thonny integrated development environment (IDE).
-* Use Thonny to flash MicroPython firmware onto the ESP32.
+* Use Thonny (Tools > Options > Interpreter) to flash MicroPython firmware onto the ESP32.
 * Use Thonny (Tools > Manage Packages) to install micropython-ssd1306
 * Copy boot.py and config.py to the freshly flashed microcontroller.
 * Edit config.py as needed.
