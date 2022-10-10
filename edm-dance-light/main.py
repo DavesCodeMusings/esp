@@ -11,16 +11,17 @@ bpm = 118  # Beats per minute (BPM) is the tempo of the music.
 bps = bpm / 60  # Dividing BPM by 60 seconds/minute gives beats per second.
 bpms = bps / 1000  # Dividing again by 1000 gives beats per millisecond.
 period = 1 / bpms  # Period is the time between beats (expressed in milliseconds.) 
+increment = pi / period  # Adding this to angle will get to 180 degrees (pi) in one beat.
 
 print("\n\n{:3d} BPM".format(bpm))
 
-t = 0
+a = 0  # Angle in radians.
 while (1):
-    start_time = ticks_us()
-    a = cos(t) * 511 + 512  # Cosine ranges from -1 to 1. PWM amplitude requires 0 to 1023.
-    led.duty(int(a))  # LED brightness is controlled by duty cycle.
-    t += pi / period  # Incrementing time by the beat period syncs the LED to every two beats.
-    if (t > 2 * pi):  # 2pi radians is one full cycle of the sine wave.
-        t = 0
+    start_time = ticks_us() # Used to remove calulation time from the eventual delay.
+    x = cos(a) * 511 + 512  # Cosine ranges from -1 to 1. PWM amplitude requires 0 to 1023.
+    led.duty(int(x))  # LED brightness is controlled by duty cycle.
+    a += increment    # Syncs the LED transition to every two beats.
+    if (a > 2 * pi):  # 2pi radians is one full cycle of the cosine wave.
+        a = 0
     elapsed_time = ticks_diff(ticks_us(), start_time)
     sleep_us(1000 - elapsed_time)  # The loop delay is 1 millisecond, which is why beats per ms is important.
