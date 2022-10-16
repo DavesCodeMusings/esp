@@ -13,7 +13,7 @@ bpms = bps / 1000  # Dividing again by 1000 gives beats per millisecond.
 period = 1 / bpms  # Period is the time between beats (expressed in milliseconds.) 
 increment = pi / period  # Adding this to angle will get to 180 degrees (pi) in one beat.
 
-print("\n\n{:3d} BPM".format(bpm))
+print("\n\n{:3d} BPM".format(BPM))
 
 a = 0  # Angle in radians.
 while (1):
