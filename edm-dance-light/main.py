@@ -3,12 +3,12 @@
 from machine import Pin, PWM
 from time import ticks_diff, ticks_us, sleep_us
 from math import pi, cos
+from config import BPM  # Beats per minute (BPM) is the tempo of the music.
 
 GPIO = 2  # GPIO 2 is the built-in LED on a NodeMCU 8266. Change as needed.
 led = PWM(Pin(GPIO), freq=1000)
 
-bpm = 118  # Beats per minute (BPM) is the tempo of the music.
-bps = bpm / 60  # Dividing BPM by 60 seconds/minute gives beats per second.
+bps = BPM / 60  # Dividing BPM by 60 seconds/minute gives beats per second.
 bpms = bps / 1000  # Dividing again by 1000 gives beats per millisecond.
 period = 1 / bpms  # Period is the time between beats (expressed in milliseconds.) 
 increment = pi / period  # Adding this to angle will get to 180 degrees (pi) in one beat.
@@ -25,3 +25,4 @@ while (1):
         a = 0
     elapsed_time = ticks_diff(ticks_us(), start_time)
     sleep_us(1000 - elapsed_time)  # The loop delay is 1 millisecond, which is why beats per ms is important.
+
