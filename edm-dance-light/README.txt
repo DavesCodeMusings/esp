@@ -1,6 +1,6 @@
 Throbbing EDM Dance Light
 
-This project is a step up from the typical blink example. It still pulses an LED, but rather than flashing on and off, it fades in and out gradually and can be timed to the beat of you favorite music.
+This project is a step up from the typical blink example. It still pulses an LED, but rather than flashing on and off, it fades in and out gradually and can be timed to the beat of your favorite music.
 
 How to use it...
 1. Figure out the tempo of your music in beats per minute.
