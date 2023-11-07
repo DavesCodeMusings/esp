@@ -1,15 +1,13 @@
-# You should not need to edit this file. Use settings in config.py instead.
-from config import AP_NAME, AP_PASS, WIFI_TIMEOUT, WEBREPL_PASS
+from config import AP_NAME, AP_PASS, WIFI_TIMEOUT
 from machine import Pin
 from network import WLAN, STA_IF
 from time import ticks_ms, ticks_diff
-from webrepl import start
 
-p12 = Pin(12, Pin.OUT)  # labeled as D4
-p13 = Pin(13, Pin.OUT)  # labeled as D5
+D4 = Pin(12, Pin.OUT)  # labeled as D4
+D5 = Pin(13, Pin.OUT)  # labeled as D5
 
-p12.value(1)
-p13.value(1)
+D4.value(0)
+D5.value(1)
 
 wlan = WLAN(STA_IF)
 wlan.active(True)
@@ -24,6 +22,4 @@ if not wlan.isconnected():
 
 if wlan.isconnected():
     print(wlan.ifconfig()[0])
-    p13.value(0)
-    start(password=WEBREPL_PASS)
-    p12.value(0)
+    D5.value(0)
